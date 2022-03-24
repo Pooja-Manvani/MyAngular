@@ -1,0 +1,46 @@
+{
+    "User": [{
+            "id": 1,
+            "name": "cvb ",
+            "age": "34",
+            "gender": "Female"
+
+        },
+        {
+            "id": 2,
+            "name": "cvb ",
+            "age": "34",
+            "gender": "Female"
+        }
+    ],
+
+    "mvpdata": [{
+            "id": 1,
+            "fullname": "Pooja",
+            "age": 56,
+            "phone": 458635,
+            "gender": "Male"
+        },
+        {
+            "id": 2,
+            "fullname": "Pooja",
+            "age": 56,
+            "phone": 458635,
+            "gender": "Male"
+        },
+        {
+            "id": 3,
+            "fullname": "Pooja",
+            "age": 56,
+            "phone": 458635,
+            "gender": "Male"
+        },
+        {
+            "id": 4,
+            "fullname": "Pooja",
+            "age": 56,
+            "phone": 458635,
+            "gender": "Male"
+        }
+    ]
+}
