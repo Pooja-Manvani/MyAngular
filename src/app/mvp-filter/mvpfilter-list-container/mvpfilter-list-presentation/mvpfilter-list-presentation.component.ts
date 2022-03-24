@@ -11,16 +11,13 @@ import { MvpfilterListPresenterService } from '../mvpfilter-list-presenter/mvpfi
 export class MvpfilterListPresentationComponent implements OnInit {
 
   @Input() public set userList(value: User[] | null) {
-    debugger
-    // console.log(value);
     if (value) {
       this._userList = value;
     }
   }
-  public get userList(): User[] | null {
+  public get userList(): User[]{
     return this._userList;
   }
-
   private _userList: User[];
   constructor(
     private mvpfilterlistpresenter: MvpfilterListPresenterService,

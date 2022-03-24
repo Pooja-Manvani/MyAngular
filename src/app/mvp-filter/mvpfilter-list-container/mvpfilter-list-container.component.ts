@@ -10,19 +10,21 @@ import { MvpfilterService } from '../mvpfilter.service';
 })
 export class MvpfilterListContainerComponent implements OnInit {
 
-  // public userList$: Observable<User[]>;
+  public userList$: Observable<User[]>;
 public userList:any
   constructor(
     private mvpfilterService: MvpfilterService
   ) {
-    // this.userList$ = new Observable();
+    this.userList$ = new Observable();
   }
 
   ngOnInit(): void {
-    this.mvpfilterService.getdata().subscribe((res:any)=>{
-      debugger
-      this.userList = res;
-    })
+    // this.mvpfilterService.getdata().subscribe((res:any)=>{
+    //   this.userList = res;
+    //   console.log(res);
+    // })
+
+    this.userList$ = this.mvpfilterService.getdata();
   }
 
 }
