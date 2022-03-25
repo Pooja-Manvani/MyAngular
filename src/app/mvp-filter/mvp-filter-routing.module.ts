@@ -6,7 +6,7 @@ import { MvpfilterListContainerComponent } from './mvpfilter-list-container/mvpf
 
 const routes: Routes = [
   { path: '', 
-  component: MvpfilterListContainerComponent,
+  component: MvpFilterComponent,
   children: [
     { 
       path: 'list', 
