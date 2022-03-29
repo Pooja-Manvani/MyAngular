@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
-  path:'',redirectTo:'mvpfilter',pathMatch:'full'
+  path:'',redirectTo:'employee',pathMatch:'full'
 },
-  { path: 'mvpfilter', loadChildren: () => import('./mvp-filter/mvp-filter.module').then(m => m.MvpFilterModule) }
+  { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
 ];
 
 @NgModule({
