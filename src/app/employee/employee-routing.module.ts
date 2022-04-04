@@ -5,9 +5,12 @@ import { EmployeeListContainerComponent } from './employee-list-container/employ
 import { EmployeeComponent } from './employee.component';
 
 const routes: Routes = [{ path: '', component: EmployeeComponent,
-children: [{ path:'', redirectTo: 'list', pathMatch: 'full' },
-{ path: 'form', component: EmployeeFormContainerComponent},
-{ path: 'list', component: EmployeeListContainerComponent}] 
+children: [
+      { path:'', redirectTo: 'list', pathMatch: 'full' },
+      { path: 'form', component: EmployeeFormContainerComponent},
+      { path: 'list', component: EmployeeListContainerComponent},
+      { path: 'edit/:id', component: EmployeeFormContainerComponent}
+] 
 
 }];
 

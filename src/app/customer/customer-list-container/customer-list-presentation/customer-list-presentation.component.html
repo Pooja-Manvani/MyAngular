@@ -1,29 +1,24 @@
 <div class="container py-5">
     <div class="d-flex justify-content-between mb-5">
-        <button class="btn btn-primary" routerLink="/employee/form"> Add </button>
+        <button class="btn btn-primary" routerLink="/customer/form"> Add </button>
         <button class="btn btn-success" routerLink="/filter"> Filter </button>
     </div>
 
-    <table class="table table-hover shadow table-striped py-5">
+    <table class="table py-5">
         <thead>
-            <tr class="align-middle">
+            <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Gender</th>
-                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let m of userlist, let i = index" class="align-middle">
+            <tr *ngFor="let m of customerList, let i = index">
                 <th scope="row">{{ i + 1}}</th>
                 <td> {{ m.name }} </td>
                 <td> {{ m.age }} </td>
                 <td> {{ m.gender }} </td>
-                <td>
-                    <button class="btn btn-warning" routerLink="/employee/edit/{{m.id}}"> Edit </button>
-                    <button class="btn btn-danger ms-3"> Delete </button>
-                </td>
             </tr>
         </tbody>
     </table>

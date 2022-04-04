@@ -1,1 +1,1 @@
-<app-employee-form-presentation (formData)="formdata($event)"></app-employee-form-presentation>
+<app-employee-form-presentation (emitFormdata)="formdata($event)" [getdata]="getByiddata$ | async"></app-employee-form-presentation>

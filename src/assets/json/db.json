@@ -61,6 +61,38 @@
       "age": "v",
       "gender": "",
       "id": 8
+    },
+    {
+      "name": "vvvv",
+      "age": 56,
+      "gender": "Female",
+      "id": 9
+    }
+  ],
+  "customerForm": [
+    {
+      "id": 1,
+      "name": "Pooja",
+      "age": 56,
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "name": "Pooja",
+      "age": 56,
+      "gender": "Male"
+    },
+    {
+      "id": 3,
+      "name": "Pooja",
+      "age": 56,
+      "gender": "Male"
+    },
+    {
+      "name": "xoxo",
+      "age": "16",
+      "gender": "Female",
+      "id": 4
     }
   ]
 }

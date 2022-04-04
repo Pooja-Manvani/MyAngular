@@ -18,4 +18,8 @@ export class EmployeeService {
   public postdata(Data: UserForm):Observable<UserForm>{
     return this.http.post<UserForm>(`${this.api}`, Data);
   }
+
+  public getbyid(id:number):Observable<UserForm>{
+    return this.http.get<UserForm>(`${this.api}/${id}`);
+  }
 }

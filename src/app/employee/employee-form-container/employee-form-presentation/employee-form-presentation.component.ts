@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserForm } from '../../employee.model';
 import { EmployeeFormPresenterService } from '../employee-form-presenter/employee-form-presenter.service';
@@ -10,7 +10,13 @@ import { EmployeeFormPresenterService } from '../employee-form-presenter/employe
 })
 export class EmployeeFormPresentationComponent implements OnInit {
 
-  @Output() formData: EventEmitter<UserForm>
+  @Input() public set getdata(data:UserForm | null){
+    if(data){
+      this.Userformgroup.patchValue(data)
+    }
+  }
+  @Output() public emitFormdata : EventEmitter<UserForm>
+  
   Userformgroup: FormGroup;
 
   constructor(private fb: FormBuilder, private service:EmployeeFormPresenterService) {
@@ -22,16 +28,17 @@ export class EmployeeFormPresentationComponent implements OnInit {
       }
     )
 
-    this.formData = new EventEmitter<UserForm>();
+    this.emitFormdata = new EventEmitter<UserForm>();
+
    }
 
   ngOnInit(): void {
-    this.service.getdata$.subscribe(Data => {
-      this.formData.emit(Data);
+    this.service.getdata$.subscribe(data => {
+      this.emitFormdata.emit(data);
     })
   }
 
   OnSubmit(){
-    this.service.Getdata(this.Userformgroup.value);
+    this.service.getFormdata(this.Userformgroup.value);
   }
 }

@@ -11,13 +11,13 @@ export class EmployeeFormPresenterService {
   public getdata$:Observable<UserForm>;
 
   constructor() {
-    this.getdata = new Subject<UserForm>();
-    // this.getdata$ = new Observable;
-    this.getdata$ = this.getdata.asObservable();
+    this.getdata = new Subject<UserForm> ();
+    this.getdata$ = this.getdata.asObservable ();
    }
 
-public  Getdata(data: UserForm){
-  this.getdata.next(data);
-}
+
+   public getFormdata(data: UserForm){
+    this.getdata.next(data);
+   }
 
 }
