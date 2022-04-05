@@ -6,9 +6,12 @@ import { CustomerComponent } from './customer.component';
 
 
 const routes: Routes = [{ path: '', component: CustomerComponent,
-children: [{ path:'', redirectTo: 'list', pathMatch: 'full' },
+children: [
+{ path:'', redirectTo: 'list', pathMatch: 'full' },
 { path: 'form', component: CustomerFormContainerComponent},
-{ path: 'list', component: CustomerListContainerComponent}] 
+{ path: 'list', component: CustomerListContainerComponent},
+{ path: 'edit/:id', component: CustomerFormContainerComponent},
+] 
 
 }];
 

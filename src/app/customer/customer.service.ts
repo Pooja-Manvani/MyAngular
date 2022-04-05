@@ -19,5 +19,16 @@ export class CustomerService {
   public post(data: customerForm):Observable<customerForm>{
     return this.http.post<customerForm>(`${this.api}`,data);
   }
+  
+  public getbyid(id: number):Observable<customerForm>{
+    return this.http.get<customerForm>(`${this.api}/${id}`);
+  }
 
+  public update(id:number, data:customerForm):Observable<customerForm>{
+    return this.http.put<customerForm>(`${this.api}/${id}`,data);
+  }
+
+  public deleteData(id:number):Observable<customerForm>{
+    return this.http.delete<customerForm>(`${this.api}/${id}`);
+  }
 }

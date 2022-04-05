@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserForm } from '../../employee.model';
 
 @Component({
@@ -16,15 +16,22 @@ export class EmployeeListPresentationComponent implements OnInit {
     }
   }
 
+  @Output() public emitDeleteid: EventEmitter<number>;
+
   public get userlist(): UserForm[] | null {
     return this._userlist
   }
 
   constructor() {
     this._userlist = [];
+    this.emitDeleteid = new EventEmitter<number>();
    }
 
   ngOnInit(): void {
+  
   }
 
+  onDelete(id:number){
+    this.emitDeleteid.emit(id);
+  }
 }

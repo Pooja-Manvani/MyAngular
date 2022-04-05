@@ -1,1 +1,1 @@
-<app-customer-form-presentation (emitFormData)="recievedData($event)"></app-customer-form-presentation>
+<app-customer-form-presentation (emitFormData)="recievedData($event)" [editData]="getByidData$ | async" (emitUpdateData)="UpdatedData($event)"></app-customer-form-presentation>

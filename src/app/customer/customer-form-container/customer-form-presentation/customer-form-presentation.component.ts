@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { customerForm } from '../../customer.model';
 import { CustomerService } from '../../customer.service';
@@ -11,9 +11,17 @@ import { CustomerFormPresenterService } from '../customer-form-presenter/custome
 })
 export class CustomerFormPresentationComponent implements OnInit {
 
+  @Input() public set editData(data: customerForm | null){
+    if(data){
+      this.customerFormGroup.patchValue(data);
+      this.formTitle = 'Edit User';
+    }
+  }
   @Output() public emitFormData: EventEmitter<customerForm>;
+  @Output() public emitUpdateData: EventEmitter<customerForm>;
 
-  customerFormGroup: FormGroup
+  customerFormGroup: FormGroup;
+  public formTitle:string = 'Add User';
   constructor(private fb:FormBuilder, private customerformService: CustomerFormPresenterService) {
     this.customerFormGroup = this.fb.group({
       name: ['',Validators.required],
@@ -22,11 +30,17 @@ export class CustomerFormPresentationComponent implements OnInit {
     })
 
     this.emitFormData = new EventEmitter<customerForm>();
+    this.emitUpdateData = new EventEmitter<customerForm>();
    }
 
   ngOnInit(): void {
     this.customerformService.customerdata.subscribe(data =>{
-      this.emitFormData.emit(data) 
+      if(this.formTitle === 'Add User'){
+        this.emitFormData.emit(data) 
+      }else{
+        this.emitUpdateData.emit(data)
+      }
+      
     })
   }
 

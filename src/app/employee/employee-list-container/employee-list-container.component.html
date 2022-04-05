@@ -1,1 +1,1 @@
-<app-employee-list-presentation [userlist]="UserFormdata$ | async"></app-employee-list-presentation>
+<app-employee-list-presentation [userlist]="UserFormdata$ | async" (emitDeleteid)="emitDeleteid($event)"></app-employee-list-presentation>

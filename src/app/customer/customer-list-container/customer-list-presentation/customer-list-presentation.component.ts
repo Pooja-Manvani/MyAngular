@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable, observable } from 'rxjs';
 import { observeNotification } from 'rxjs/internal/Notification';
 import { customerForm } from '../../customer.model';
@@ -13,6 +13,8 @@ export class CustomerListPresentationComponent implements OnInit {
 
   private _customerList: customerForm[];
 
+  @Output() public emitDeleteid: EventEmitter<number>;
+
   @Input() set customerList(value: customerForm[] | null ){
     if (value){
       this._customerList = value
@@ -25,9 +27,14 @@ export class CustomerListPresentationComponent implements OnInit {
 
   constructor(private customerService: CustomerService) { 
     this._customerList = [];
+    this.emitDeleteid = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
-  
+
+  }
+
+  onDelete(id:number){
+    this.emitDeleteid.emit(id);
   }
 }

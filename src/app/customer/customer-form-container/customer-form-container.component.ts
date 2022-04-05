@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { customerForm } from '../customer.model';
 import { CustomerService } from '../customer.service';
 
@@ -10,9 +11,15 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerFormContainerComponent implements OnInit {
 
-  constructor(private customerService: CustomerService, private route: Router) { }
+  public getByidData$:Observable<customerForm>;
+  public getid: number;
+  constructor(private customerService: CustomerService, private route: Router, private active:ActivatedRoute) { 
+    this.getid = this.active.snapshot.params['id'];
+    this.getByidData$ = new Observable();
+  }
 
   ngOnInit(): void {
+    this.getByidData$ = this.customerService.getbyid(this.getid)
   }
 
   recievedData(data: customerForm){
@@ -20,5 +27,12 @@ export class CustomerFormContainerComponent implements OnInit {
       alert("data added");
       this.route.navigateByUrl('/customer/list')
     });
+  }
+
+  UpdatedData(data:customerForm){
+    this.customerService.update(this.getid,data).subscribe(() =>{
+      alert("Data Updated");
+      this.route.navigateByUrl('/customer/list');
+    })
   }
 }

@@ -22,7 +22,7 @@
                 <td> {{ m.gender }} </td>
                 <td>
                     <button class="btn btn-warning" routerLink="/employee/edit/{{m.id}}"> Edit </button>
-                    <button class="btn btn-danger ms-3"> Delete </button>
+                    <button class="btn btn-danger ms-3" (click)="onDelete(m.id)"> Delete </button>
                 </td>
             </tr>
         </tbody>

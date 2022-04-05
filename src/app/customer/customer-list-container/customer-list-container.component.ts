@@ -21,4 +21,10 @@ export class CustomerListContainerComponent implements OnInit {
     this.customerForm$ = this.customerService.get();
   }
 
+  public deleteId(id:number){
+    this.customerService.deleteData(id).subscribe(() => {
+      alert("Data Deleted");
+      this.customerForm$ = this.customerService.get();
+    })
+  }
 }

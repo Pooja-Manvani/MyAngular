@@ -1,1 +1,1 @@
-<app-customer-list-presentation [customerList]="customerForm$ | async"></app-customer-list-presentation>
+<app-customer-list-presentation [customerList]="customerForm$ | async" (emitDeleteid)="deleteId($event)"></app-customer-list-presentation>

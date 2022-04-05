@@ -11,6 +11,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Gender</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,10 @@
                 <td> {{ m.name }} </td>
                 <td> {{ m.age }} </td>
                 <td> {{ m.gender }} </td>
+                <td>
+                    <button class="btn btn-success mx-2" routerLink="/customer/edit/{{m.id}}">Edit</button>
+                    <button class="btn btn-secondary " (click)="onDelete(m.id)">Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>

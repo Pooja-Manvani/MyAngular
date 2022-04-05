@@ -10,15 +10,17 @@ import { EmployeeFormPresenterService } from '../employee-form-presenter/employe
 })
 export class EmployeeFormPresentationComponent implements OnInit {
 
-  @Input() public set getdata(data:UserForm | null){
+  @Input() public set editData(data:UserForm | null){
     if(data){
-      this.Userformgroup.patchValue(data)
+      this.Userformgroup.patchValue(data);
+      this.formtitle = 'Edit User';
     }
   }
-  @Output() public emitFormdata : EventEmitter<UserForm>
+  @Output() public emitFormdata : EventEmitter<UserForm>;
+  @Output() public emitUpdateData : EventEmitter<UserForm>;
   
   Userformgroup: FormGroup;
-
+  public formtitle:string = 'Add User';
   constructor(private fb: FormBuilder, private service:EmployeeFormPresenterService) {
     this.Userformgroup = this.fb.group(
       {
@@ -29,12 +31,17 @@ export class EmployeeFormPresentationComponent implements OnInit {
     )
 
     this.emitFormdata = new EventEmitter<UserForm>();
+    this.emitUpdateData = new EventEmitter<UserForm>();
 
    }
 
   ngOnInit(): void {
     this.service.getdata$.subscribe(data => {
-      this.emitFormdata.emit(data);
+      if(this.formtitle === 'Add User'){
+        this.emitFormdata.emit(data)
+      }else{
+        this.emitUpdateData.emit(data)
+      }
     })
   }
 

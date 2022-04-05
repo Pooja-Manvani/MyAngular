@@ -22,4 +22,12 @@ export class EmployeeService {
   public getbyid(id:number):Observable<UserForm>{
     return this.http.get<UserForm>(`${this.api}/${id}`);
   }
+
+  public updateData(id:number,data:UserForm):Observable<UserForm>{
+    return this.http.put<UserForm>(`${this.api}/${id}`,data);
+  }
+  
+  public deleteData(id:number):Observable<UserForm>{
+    return this.http.delete<UserForm>(`${this.api}/${id}`);
+  }
 }
