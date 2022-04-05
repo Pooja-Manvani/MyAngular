@@ -20,5 +20,11 @@ export class EmployeeListContainerComponent implements OnInit {
     this.UserFormdata$ = this.EmployeeService.getdata();
   }
 
+  public emitDeleteid(id:number){
+    this.EmployeeService.deleteData(id).subscribe(() => {
+      alert("Data Deleted");
+      this.UserFormdata$ = this.EmployeeService.getdata(); 
+    });
+  }
 
 }
