@@ -53,16 +53,16 @@
   ],
   "customerForm": [
     {
-      "name": "anna",
-      "age": "78",
-      "gender": "Male",
-      "id": 3
-    },
-    {
       "name": "sia",
       "age": "16",
       "gender": "Female",
       "id": 4
+    },
+    {
+      "name": "xoxo",
+      "age": "234",
+      "gender": "Male",
+      "id": 5
     }
   ]
 }

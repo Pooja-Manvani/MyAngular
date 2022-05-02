@@ -1,10 +1,16 @@
+import { Overlay } from '@angular/cdk/overlay';
+import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EmployeeFilterPresentationComponent } from '../../employee-form-container/employee-form-presentation/employee-filter-presentation/employee-filter-presentation.component';
+import { EmployeeFilterPresenterService } from '../../employee-form-container/employee-form-presentation/employee-filter-presenter/employee-filter-presenter.service';
 import { UserForm } from '../../employee.model';
+import { EmployeeListPresenterService } from '../employee-list-presenter/employee-list-presenter.service';
 
 @Component({
   selector: 'app-employee-list-presentation',
   templateUrl: './employee-list-presentation.component.html',
-  styleUrls: ['./employee-list-presentation.component.scss']
+  styleUrls: ['./employee-list-presentation.component.scss'],
+  viewProviders: [EmployeeListPresenterService]
 })
 export class EmployeeListPresentationComponent implements OnInit {
 
@@ -22,7 +28,7 @@ export class EmployeeListPresentationComponent implements OnInit {
     return this._userlist
   }
 
-  constructor() {
+  constructor(private Service:EmployeeListPresenterService) {
     this._userlist = [];
     this.emitDeleteid = new EventEmitter<number>();
    }
@@ -34,4 +40,9 @@ export class EmployeeListPresentationComponent implements OnInit {
   onDelete(id:number){
     this.emitDeleteid.emit(id);
   }
+
+  onFilter(){
+    this.Service.onFilter();
+  }
+  
 }

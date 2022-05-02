@@ -7,6 +7,7 @@ import { StudentFormContainerComponent } from './student-form-container/student-
 import { StudentListContainerComponent } from './student-list-container/student-list-container.component';
 import { StudentFormPresentationComponent } from './student-form-container/student-form-presentation/student-form-presentation.component';
 import { StudentListPresentationComponent } from './student-list-container/student-list-presentation/student-list-presentation.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { StudentListPresentationComponent } from './student-list-container/stude
   ],
   imports: [
     CommonModule,
-    StudentRoutingModule
+    StudentRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class StudentModule { }
