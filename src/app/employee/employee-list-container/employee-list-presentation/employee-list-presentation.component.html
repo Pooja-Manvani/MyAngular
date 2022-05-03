@@ -1,7 +1,9 @@
 <div class="container py-5">
     <div class="d-flex justify-content-between mb-5">
         <button class="btn btn-primary" routerLink="/employee/form"> Add </button>
-        <button class="btn btn-success" (click)="onFilter()"> Filter </button>
+        <button class="btn btn-success position-relative" (click)="onFilter()"> Filter 
+                <span *ngIf="notification" class="badge-notification position-absolute  top-0 start-100 translate-middle bg-danger border border-light rounded-circle"></span>
+        </button>
     </div>
 
     <table class="table table-hover shadow table-striped py-5">

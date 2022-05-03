@@ -14,7 +14,15 @@ import { EmployeeListPresenterService } from '../employee-list-presenter/employe
 })
 export class EmployeeListPresentationComponent implements OnInit {
 
-  private _userlist: UserForm[]
+  private _userlist: UserForm[];
+  public filterData: any;
+  copyData: any;
+  Employees: any;
+  finalData: any;
+  tableData: any;
+  nodatafound: boolean;
+  notification: boolean;
+  count: boolean;
 
   @Input() set userlist(value: UserForm[] | null ){
     if (value){
@@ -28,7 +36,7 @@ export class EmployeeListPresentationComponent implements OnInit {
     return this._userlist
   }
 
-  constructor(private Service:EmployeeListPresenterService) {
+  constructor(private Service:EmployeeListPresenterService, private overlay:Overlay) {
     this._userlist = [];
     this.emitDeleteid = new EventEmitter<number>();
    }
@@ -42,7 +50,74 @@ export class EmployeeListPresentationComponent implements OnInit {
   }
 
   onFilter(){
-    this.Service.onFilter();
+    const OverlayRef = this.overlay.create({
+      hasBackdrop: true,
+      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+    })
+
+    const component = new ComponentPortal(EmployeeFilterPresentationComponent)
+    const componentRef = OverlayRef.attach(component);
+
+    OverlayRef.backdropClick().subscribe(() => {
+      OverlayRef.detach();
+    })
+
+    componentRef.instance.emitCancel.subscribe(() => {
+      OverlayRef.detach();
+    })
+    
+    componentRef.instance.emitFilterData.subscribe((data) => {
+      this.filterData = data;
+      // this.filtering();
+      // OverlayRef.detach();
+
+      
+      let Keys = Object.keys(this.filterData)
+
+      Keys.forEach((items: any) => {
+        if (this.filterData[items]) {
+          this.count = true;
+        }
+      })
+
+      if (this.count) {
+        this.filtering();
+        this.notification = true;
+      } else {
+        this.notification = false;
+      }
+
+      OverlayRef.detach();
+    });
+
+    if (this.filterData) {
+      componentRef.instance.listdata = this.filterData;
+    }
+  }
+
+
+  public filtering(){
+    if (!this.copyData) {
+      this.copyData = [...this._userlist]
+    }
+
+    let Keys = Object.keys(this.filterData);
+
+    Keys.forEach((items: any) => {
+      if (this.filterData[items]) {
+        this.finalData = this.copyData.filter((data: any) => {
+          return data[items] === this.filterData[items]
+        })
+      }
+    });
+
+    this._userlist = this.finalData;
+
+    if (this.finalData.length === 0) {
+      this.nodatafound = true;
+    } else {
+      this.nodatafound = false;
+    }
   }
   
 }

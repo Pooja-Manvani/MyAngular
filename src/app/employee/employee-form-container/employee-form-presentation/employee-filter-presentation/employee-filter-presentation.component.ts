@@ -15,6 +15,7 @@ export class EmployeeFilterPresentationComponent implements OnInit {
   public emitCancel:EventEmitter<boolean>;
   public emitFilterData:EventEmitter<any>;
   Filterformgroup: FormGroup;
+  listdata: any;
   constructor(private overlay: Overlay, private fb: FormBuilder, private service:EmployeeFilterPresenterService) {
     this.emitCancel = new EventEmitter();
 
@@ -30,6 +31,9 @@ export class EmployeeFilterPresentationComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    if(this.listdata){
+      this.Filterformgroup.patchValue(this.listdata);
+    }
   }
 
   public onCancel(){

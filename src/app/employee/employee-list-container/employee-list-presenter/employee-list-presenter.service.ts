@@ -5,26 +5,20 @@ import { EmployeeFilterPresentationComponent } from '../../employee-form-contain
 
 @Injectable()
 export class EmployeeListPresenterService {
-
-  constructor(private overlay: Overlay) { }
-
-  onFilter(){
-    const OverlayRef = this.overlay.create({
-      hasBackdrop: true,
-      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
-    })
-
-    const component = new ComponentPortal(EmployeeFilterPresentationComponent)
-    const componentRef = OverlayRef.attach(component);
-
-    OverlayRef.backdropClick().subscribe(() => {
-      OverlayRef.detach();
-    })
-
-    componentRef.instance.emitFilterData.subscribe((data) => {
-      console.log(data);
-    })
+  
+ 
+  
+  nodatafound: boolean;
+  constructor() { 
+    this.nodatafound = false;
+  
   }
 
+  ngOnInit(): void{
+    // this.tableData = this.Employees
+  }
 
+ 
+
+  
 }
