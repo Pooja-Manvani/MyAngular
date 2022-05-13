@@ -1,0 +1,18 @@
+<div class="p-3 border bg-white shadow-sm border-radius">
+    <div class="d-flex border justify-content-between p-3 border bg-light" *ngFor="let data of patientData" (click)="showData(data.id)">
+        <div class="patient-list-item d-flex align-items-center">
+            <!-- Profile Image of the Patient -->
+            <figure class="patient-profile border rounded-circle overflow-hidden mb-0">
+                <img src={{data.image}} alt="image" class="w-100 h-auto">
+            </figure>
+            <div class="ps-3">
+                <h4 class="mb-2">{{data.fullname}}</h4>
+                <p class="mb-0">{{data.gender}} <span>&#8226;</span> {{data.age}} yrs</p>
+            </div>
+        </div>
+        <div class="d-flex flex-column pt-3">
+            <p class="mb-2">Time</p>
+            <p>{{data.mobile}}</p>
+        </div>
+    </div>
+</div>

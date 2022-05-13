@@ -104,58 +104,54 @@
 <div class="px-4 py-5">
     <!-- Wrapper Container -->
     <div class="row gx-5 px-4">
-        <!-- Patient List Container -->
+        <!-- Start: Patient List Container -->
         <div class="col">
-            <div class="p-3 border bg-white shadow-sm border-radius">
-                <div class="d-flex border justify-content-between p-3 border bg-light">
-                    <div class="patient-list-item d-flex align-items-center">
-                        <!-- Profile Image of the Patient -->
-                        <figure class="patient-profile border rounded-circle overflow-hidden mb-0">
-                            <img src="../../../../assets/images/girl-face images.png" alt="image" class="w-100 h-auto">
+            <app-mypatient-list-presentation [patientData]="PatientListData$ | async"></app-mypatient-list-presentation>
+
+            <!-- <div class="p-3 border bg-white shadow-sm border-radius">
+                <div class="d-flex border justify-content-between p-3 border bg-light" *ngFor="let data of patientData" (click)="showData(data.id)">
+                    <div class="patient-list-item d-flex align-items-center"> -->
+            <!-- Profile Image of the Patient -->
+            <!-- <figure class="patient-profile border rounded-circle overflow-hidden mb-0">
+                            <img src={{data.image}} alt="image" class="w-100 h-auto">
                         </figure>
                         <div class="ps-3">
-                            <h4 class="mb-2">Patient Name</h4>
-                            <p class="mb-0">gender <span>.</span> age</p>
+                            <h4 class="mb-2">{{data.fullname}}</h4>
+                            <p class="mb-0">{{data.gender}} <span>.</span> {{data.age}} yrs</p>
                         </div>
                     </div>
                     <div class="d-flex flex-column pt-3">
                         <p class="mb-2">Time</p>
-                        <p>0987654321</p>
+                        <p>{{data.mobile}}</p>
                     </div>
                 </div>
-                <div class="d-flex border justify-content-between p-4">
-                    <div class="d-flex">
-                        <!-- Profile Image of the Patient -->
-                        <figure class="patient-profile border rounded-circle overflow-hidden">
-                            <img src="../../../../assets/images/young-girl.jpg" alt="image" class="w-100 h-auto">
-                        </figure>
-                        <div class="ps-3 pt-3">
-                            <h4>Patient Name</h4>
-                            <p>gender . age</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column pt-3">
-                        <p>Time</p>
-                        <p>0987654321</p>
-                    </div>
-                </div>
-            </div>
+            </div> -->
+
         </div>
-        <!-- Patient List Container ends-->
-        <!-- Patient Details Container -->
+        <!-- End: Patient List Container -->
+        <!-- Start: Patient Details Container -->
         <div class="col">
-            <div class="p-3 border bg-white shadow-sm border-radius">
-                <div class="d-flex justify-content-between border border-success p-3 border bg-light">
+            <div class="p-3 border bg-white shadow-sm border-radius ">
+                <div class="d-flex justify-content-between align-items-center  p-3 bg-light border-bottom border-2">
                     <h3 class="p-2">Prescriptions</h3>
                     <button class="btn btn-secondary">
-                <span class="icon-plus"></span>
-            </button>
+                        <span class="icon-plus"></span>
+                    </button>
                 </div>
-                <div>form</div>
+                <div class="d-flex pt-4">
+                    <div class="d-flex align-content-center">
+                        <span>icon</span>
+                        <p>Disease name</p>
+                    </div>
+                    <div>
+                        Duration
+                    </div>
+
+                </div>
             </div>
         </div>
-        <!--Patient Details Container ends-->
+        <!--End: Patient Details Container -->
     </div>
-    <!-- Wrapper container  ends-->
+    <!--End: Wrapper container -->
 </div>
-<!-- Main Container ends -->
+<!--End: Main Container -->

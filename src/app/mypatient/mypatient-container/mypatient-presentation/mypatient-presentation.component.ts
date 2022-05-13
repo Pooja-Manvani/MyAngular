@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { patientData } from '../../mypatient.model';
+import { MypatientService } from '../../mypatient.service';
 
 @Component({
   selector: 'app-mypatient-presentation',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MypatientPresentationComponent implements OnInit {
 
-  constructor() { }
+  
+  public PatientListData$: Observable<patientData[]>
 
-  ngOnInit(): void {
+  constructor(private service: MypatientService) { 
+    this.PatientListData$ = new Observable();
   }
 
+  
+  ngOnInit(): void {
+    this.PatientListData$ = this.service.getdata();
+  }
+
+ 
 }
