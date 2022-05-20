@@ -11,7 +11,7 @@ export class MypatientListPresentationComponent implements OnInit {
 
   private _patientData: patientData[];
   public get patientData(): patientData[] {
-    return this._patientData;
+  return this._patientData;
   }
  @Input() public set patientData(v: patientData[] | null) {
     if (v) {

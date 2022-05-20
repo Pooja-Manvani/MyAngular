@@ -1,0 +1,77 @@
+.accordion {
+    width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    width: 100%;
+    background: #1f8dd6;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #54a0ff;
+    color: #f3f3f3;
+    cursor: pointer;
+  }
+  
+  .accordion-heading{
+      padding: 10px;
+      cursor: pointer;
+      background: #54a0ff;
+      color: #f3f3f3;
+      margin-top: 4px;
+      font-weight: 600;
+      border-radius: 2px;
+  }
+
+  .accordion-content{
+      transition: 4s ease-in-out;
+      padding: 10px;
+      background: rgb(252, 243, 243);
+      border: 1px solid rgb(255, 225, 225);
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      animation-name: slideDown;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      animation-timing-function: ease;
+      -webkit-animation-timing-function: ease;
+  }
+  
+  @keyframes slideDown{
+      0%{
+          transform: translateY(-100%);
+      }
+      50%{
+          transform: translateY(8%);
+      }
+      65%{
+        transform: translateY(-4%);
+      }
+      80%{
+        transform: translateY(4%);
+      }
+      95%{
+        transform: translateY(-2%);
+      }
+      100%{
+        transform: translateY(0%);
+      }
+  }
+
+  .up-icon{
+      transition: 0.2s ease-out;
+  }
+
+  .icon{
+      animation-name: icon;
+      transform: rotate(180deg);
+      transition: 0.2s ease-out;
+  }
+  .accordion-desc{
+      padding-top: 15px;
+  }
