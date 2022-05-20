@@ -1,1 +1,62 @@
-<p>mypatient-prescription-presentation works!</p>
+<!-- <div class="prescripton-diseases position-relative rounded-3 d-flex flex-column justify-content-between aligm-items-center">
+            <div *ngFor="let item of data; let i = index;">
+                <button class="accordion cursor-pointer" (click)="toggleAccordian($event, i)" id="A1"><span
+                        class="up-icon" [class.icon]="id === 'A1'"> </span> {{item.parentName}} </button>
+                <div class="panel pb-3 pt-4" hide="!item.isActive">
+                    <table>
+                        <thead class="align-middle">
+                            <tr>
+                                <th scope="col">Medicine Name</th>
+                                <th scope="col">Dosage</th>
+                                <th scope="col">Timing</th>
+                                <th scope="col">Days</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let child of item.childProperties" class="align-middle">
+                            <tr>
+                                <td>{{child.Medicine}}</td>
+                                <td>{{child.dosage}}</td>
+                                <td>{{child.Timing}}</td>
+                                <td>{{child.days}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+
+<!-- kevang code -->
+<!-- 
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item" *ngFor="let item of selectedData; let i = index">
+                <h2 class="accordion-header" [id]="'heading'+i">
+                    <button class="accordion-button" type="button" (click)="toggleAccordian($event, i)" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i" [ngClass]="{ 'collapsed': i != 0 }">
+                        Accordion Item {{i}}
+                    </button>
+                </h2>
+                <div [@accordionItemContentAnimation]="state" [id]="'collapse'+i" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample" [ngClass]="{'show' : activeIndex === i}">
+                    <div class="accordion-body">
+                        {{item.content}}
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+<!-- <span class="text-primary fw-bold fs-5 "><i class='bx bxs-right-arrow px-3' style="font-size: 0.8rem; "></i> Diarrhea, Fever </span>
+        <span class="text-muted pt-2 " style="font-size: 0.8rem; ">13 April 2021</span>
+        <div class="prescription-medicine border border-3 p-3 position-absolute w-100 ">
+            <table class="w-100 " style="font-size: 0.8rem; ">
+                <tr style="color: #76969e; ">
+                    <th>Medicine Name</th>
+                    <th>Doages</th>
+                    <th>Timing</th>
+                    <th>Days</th>
+                </tr>
+                <tr>
+                    <td> Paracetamol </td>
+                    <td> 1 </td>
+                    <td> Mo,Af,Ni </td>
+                    <td> 3 </td>
+                </tr>
+            </table>
+        </div> -->

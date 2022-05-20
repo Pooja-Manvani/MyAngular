@@ -16,6 +16,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@ import { MypatientPrescriptionPresentationComponent } from './mypatient-containe
     MypatientContainerComponent,
     MypatientPresentationComponent,
     MypatientListPresentationComponent,
-    MypatientPrescriptionPresentationComponent
+    MypatientPrescriptionPresentationComponent,
   ],
   imports: [
     CommonModule,
