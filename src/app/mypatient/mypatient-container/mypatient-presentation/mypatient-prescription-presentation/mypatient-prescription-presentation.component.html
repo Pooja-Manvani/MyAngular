@@ -1,1 +1,42 @@
-<p>mypatient-prescription-presentation works!</p>
+<div class="p-3 border bg-white shadow-sm border-radius h-100 ">
+    <div class="d-flex justify-content-between align-items-center  p-3 bg-light border-bottom border-2">
+        <h3 class="p-2">Prescriptions</h3>
+        <button class="btn btn-secondary">
+            <span class="icon-plus"></span>
+        </button>
+    </div>
+    <!-- <div class="wrapper-accordion d-flex pt-4"> -->
+
+        <!-- <div class="accordion"> -->
+                <!-- <div class="accordion-heading" id="A1" (click)="accordion('A1')" >
+                    <button class="accordion-header d-flex justify-content-between align-content-center">
+                    <div class="d-flex">
+                        <span class="plus-icon up-icon p-3" [class.icon]="id === 'A1'"> ^ </span>
+                        <p class="accordion-desc">Disease name</p>
+                    </div>
+                    <div>
+                        <p class="accordion-desc">time</p>
+                    </div>
+                    </button>
+                </div>
+                
+                <div class="accordion-content" *ngif="id === 'A1'">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit dolor delectus voluptates,
+                     nisi vitae ipsa ea odio beatae! 
+                    Laborum veniam tempore expedita aliquid quos dolorum repellat obcaecati aspernatur soluta dolorem.
+                </div>
+            </div>
+    </div> -->
+<!-- </div> -->
+<div class="container">
+    <div class="accordion-heading" id="A1" (click)="accordion('A1')">Accordion 1
+        <span class="pull-right up-icon" [class.icon]="id === 'A1'"> ^ </span>
+    </div>
+
+    <div class="accordion-content" *ngif="id === 'A1'">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur alias dolorum soluta!
+         Vero minima recusandae expedita officia,
+         est saepe esse asperiores eaque voluptatibus neque aspernatur animi explicabo nemo laboriosam!
+    </div>
+
+</div>

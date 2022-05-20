@@ -12,4 +12,14 @@ export class MypatientPrescriptionPresentationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  id:any = '';
+  accordion(ids:any){
+    if(this.id == ids){
+      this.id = '';
+    }
+    else{
+      this.id = ids;
+    }
+  }
+
 }
