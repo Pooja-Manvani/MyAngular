@@ -3,19 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { StepperRoutingModule } from './stepper-routing.module';
 import { StepperComponent } from './stepper.component';
-import { StepperPresentationContainerComponent } from './stepper-presentation-container/stepper-presentation-container.component';
-import { StepperPresenterContainerComponent } from './Stepper-container/stepper-presenter/stepper-presenter-container/stepper-presenter-container.component';
+import { FormPageContainerComponent } from './form-page-container/form-page-container.component';
+import { CompletePageComponent } from './complete-page/complete-page.component';
+import { FormsModule } from '@angular/forms';
+import { StepTemplateComponent } from './step-template/step-template.component';
 
 
 @NgModule({
   declarations: [
     StepperComponent,
-    StepperPresentationContainerComponent,
-    StepperPresenterContainerComponent
+    FormPageContainerComponent,
+    CompletePageComponent,
+    StepTemplateComponent,
   ],
   imports: [
     CommonModule,
-    StepperRoutingModule
+    StepperRoutingModule,
+    FormsModule
   ]
 })
 export class StepperModule { }
