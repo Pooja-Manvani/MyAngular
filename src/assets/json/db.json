@@ -1,118 +1,120 @@
 {
-    "User": [{
-            "id": 1,
-            "name": "cvb ",
-            "age": "34",
-            "gender": "Female"
-
-        },
-        {
-            "id": 2,
-            "name": "cvb ",
-            "age": "34",
-            "gender": "Female"
-        }
-    ],
-    "UserForm": [{
-            "id": 1,
-            "name": "Pooja",
-            "age": 56,
-            "gender": "Male"
-        },
-        {
-            "name": "cvb",
-            "age": "cvb ",
-            "gender": "Male",
-            "id": 5
-        },
-        {
-            "name": "fghn",
-            "age": "vgn",
-            "gender": "Male",
-            "id": 6
-        },
-        {
-            "name": "hfhfx",
-            "age": "234",
-            "gender": "Female",
-            "id": 7
-        },
-        {
-            "name": "cb",
-            "age": "v",
-            "gender": "Male",
-            "id": 8
-        },
-        {
-            "name": "vvvv",
-            "age": 56,
-            "gender": "Female",
-            "id": 9
-        }
-    ],
-    "customerForm": [{
-            "name": "sia",
-            "age": "16",
-            "gender": "Female",
-            "id": 4
-        },
-        {
-            "name": "xoxo",
-            "age": "234",
-            "gender": "Male",
-            "id": 5
-        }
-    ],
-
-    "patientData": [{
-            "fullname": "Sia Parker",
-            "gender": "Female",
-            "age": "43",
-            "time": "7:00 pm",
-            "mobile": "0987654321",
-            "id": 1,
-            "image": "../../../../assets/images/girl-face images.png"
-        },
-        {
-            "fullname": "Sia Parker",
-            "gender": "Female",
-            "age": "43",
-            "mobile": "0987654321",
-            "id": 1,
-            "image": "../../../../assets/images/girl-face images.png"
-        },
-        {
-            "fullname": "leo messy",
-            "gender": "male",
-            "age": "30",
-            "mobile": "0987654321",
-            "id": 1,
-            "image": "../../../../assets/images/girl-face images.png"
-        },
-        {
-            "fullname": "Sia Parker",
-            "gender": "Female",
-            "age": "43",
-            "time": "7:00 pm",
-            "mobile": "0987654321",
-            "id": 1,
-            "image": "../../../../assets/images/girl-face images.png"
-        },
-        {
-            "fullname": "Sia Parker",
-            "gender": "Female",
-            "age": "43",
-            "mobile": "0987654321",
-            "id": 1,
-            "image": "../../../../assets/images/girl-face images.png"
-        },
-        {
-            "fullname": "leo messy",
-            "gender": "male",
-            "age": "30",
-            "mobile": "0987654321",
-            "id": 1,
-            "image": "../../../../assets/images/girl-face images.png"
-        }
-    ]
+  "User": [
+    {
+      "id": 1,
+      "name": "cvb ",
+      "age": "34",
+      "gender": "Female"
+    },
+    {
+      "id": 2,
+      "name": "cvb ",
+      "age": "34",
+      "gender": "Female"
+    }
+  ],
+  "UserForm": [
+    {
+      "name": "cvb",
+      "age": "cvb ",
+      "gender": "Female",
+      "id": 5
+    },
+    {
+      "name": "fghn",
+      "age": "vgn",
+      "gender": "Male",
+      "id": 6
+    },
+    {
+      "name": "hfhfx",
+      "age": "234",
+      "gender": "Female",
+      "id": 7
+    },
+    {
+      "name": "cb",
+      "age": "v",
+      "gender": "Male",
+      "id": 8
+    },
+    {
+      "name": "vvvv",
+      "age": 56,
+      "gender": "Female",
+      "id": 9
+    },
+    {
+      "name": "Pooja Manvani",
+      "age": "24",
+      "gender": "Female",
+      "id": 10
+    }
+  ],
+  "customerForm": [
+    {
+      "name": "sia",
+      "age": "16",
+      "gender": "Female",
+      "id": 4
+    },
+    {
+      "name": "xoxo",
+      "age": "234",
+      "gender": "Male",
+      "id": 5
+    }
+  ],
+  "patientData": [
+    {
+      "fullname": "Sia Parker",
+      "gender": "Female",
+      "age": "43",
+      "time": "7:00 pm",
+      "mobile": "0987654321",
+      "id": 1,
+      "image": "../../../../assets/images/girl-face images.png"
+    },
+    {
+      "fullname": "Sia Parker",
+      "gender": "Female",
+      "age": "43",
+      "mobile": "0987654321",
+      "id": 1,
+      "image": "../../../../assets/images/girl-face images.png"
+    },
+    {
+      "fullname": "leo messy",
+      "gender": "male",
+      "age": "30",
+      "mobile": "0987654321",
+      "id": 1,
+      "image": "../../../../assets/images/girl-face images.png"
+    },
+    {
+      "fullname": "Sia Parker",
+      "gender": "Female",
+      "age": "43",
+      "time": "7:00 pm",
+      "mobile": "0987654321",
+      "id": 1,
+      "image": "../../../../assets/images/girl-face images.png"
+    },
+    {
+      "fullname": "Sia Parker",
+      "gender": "Female",
+      "age": "43",
+      "mobile": "0987654321",
+      "id": 1,
+      "image": "../../../../assets/images/girl-face images.png"
+    },
+    {
+      "fullname": "leo messy",
+      "gender": "male",
+      "age": "30",
+      "mobile": "0987654321",
+      "id": 1,
+      "image": "../../../../assets/images/girl-face images.png"
+    }
+  ]
 }

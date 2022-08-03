@@ -10,6 +10,7 @@ import { EmployeeFormPresentationComponent } from './employee-form-container/emp
 import { EmployeeListPresentationComponent } from './employee-list-container/employee-list-presentation/employee-list-presentation.component';
 import { EmployeeFilterPresentationComponent } from './employee-form-container/employee-form-presentation/employee-filter-presentation/employee-filter-presentation.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmployeeService } from './employee.service';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EmployeeRoutingModule,
     OverlayModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers:[EmployeeService]
 })
 export class EmployeeModule { }
