@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserForm } from '../../employee.model';
 import { EmployeeFormPresenterService } from '../employee-form-presenter/employee-form-presenter.service';
 
@@ -21,7 +22,7 @@ export class EmployeeFormPresentationComponent implements OnInit {
   
   Userformgroup: FormGroup;
   public formtitle:string = 'Add User';
-  constructor(private fb: FormBuilder, private service:EmployeeFormPresenterService) {
+  constructor(private fb: FormBuilder, private service:EmployeeFormPresenterService, private route:Router) {
     this.Userformgroup = this.fb.group(
       {
         name:['',Validators.required],
@@ -45,7 +46,12 @@ export class EmployeeFormPresentationComponent implements OnInit {
     })
   }
 
+
   OnSubmit(){
     this.service.getFormdata(this.Userformgroup.value);
+  }
+
+  cancel(){
+    this.route.navigateByUrl('/employee/list');
   }
 }
